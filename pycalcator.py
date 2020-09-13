@@ -1,15 +1,16 @@
+import sys
 from time import sleep
 
 print("Hello, welcome to Rohit's calculator\n")
-sleep(2.0)
+#sleep(2.0)
 print('Before we start please make sure, if you select subtraction or division your 1st number')
 print('should be greater than your 2nd number\n')
 print('No errors will occur if you enter incorrectly, just your answer would be incorrect\n')
-sleep(10)
+#sleep(10)
 
 first = input('Enter 1st number: ')
 
-second =input('Enter 2nd number: ')
+second = input('Enter 2nd number: ')
 
 error = True
 
@@ -34,9 +35,14 @@ def calculate():
         print("\nThe product of",first,"and",second,"is:",result)
         return False
     elif(sign == '/'):
-        result = float(first) / float(second)
-        print("\nThe fraction of",first,"and",second,"is:",result)
-        return False
+        if(second == '0'):
+            print("Division with zero is impossible!!")
+            sleep(0.8)
+            sys.exit()
+        else:           
+            result = float(first) / float(second)
+            print("\nThe fraction of",first,"and",second,"is:",result)
+            return False
     else:
         print("Invalid selection!!")
         sleep(2.0)
@@ -45,9 +51,10 @@ def calculate():
         return True
     
     return error
-        
+
+
 while error:
-   error = calculate()
+    error = calculate()
 
 sleep(1.5)
 print("\nHope you got your answer!!")
