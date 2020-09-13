@@ -2,11 +2,11 @@ import sys
 from time import sleep
 
 print("Hello, welcome to Rohit's calculator\n")
-#sleep(2.0)
+sleep(2.0)
 print('Before we start please make sure, if you select subtraction or division your 1st number')
 print('should be greater than your 2nd number\n')
 print('No errors will occur if you enter incorrectly, just your answer would be incorrect\n')
-#sleep(10)
+sleep(10)
 
 first = input('Enter 1st number: ')
 
